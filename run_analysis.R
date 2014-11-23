@@ -1,17 +1,16 @@
-#Before running this script the current directory in R should be changed to the 
-#downloaded dataset directory
+#Before running this script the current directory in R should have the folder named UCI HAR DATASET
 
 run_analysis<-function(){
      library(plyr)     #load package plyr
      
-     xtes<-read.table("test/X_test.txt")   #load data into various data frames
-     xtrain<-read.table("train/X_train.txt")
-     testact<-read.table("test/y_test.txt")
-     testsub<-read.table("test/subject_test.txt")
-     trainact<-read.table("train/y_train.txt")
-     trainsub<-read.table("train/subject_train.txt")
+     xtes<-read.table("UCI HAR Dataset/test/X_test.txt")   #load data into various data frames
+     xtrain<-read.table("UCI HAR Dataset/train/X_train.txt")
+     testact<-read.table("UCI HAR Dataset/test/y_test.txt")
+     testsub<-read.table("UCI HAR Dataset/test/subject_test.txt")
+     trainact<-read.table("UCI HAR Dataset/train/y_train.txt")
+     trainsub<-read.table("UCI HAR Dataset/train/subject_train.txt")
 
-     feat<-read.table("features.txt") #extract column names
+     feat<-read.table("UCI HAR Dataset/features.txt") #extract column names
      feats<-feat[,2]
      
      colnames(xtes)<-feats #change column names to more descriptive ones
